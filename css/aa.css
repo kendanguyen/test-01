@@ -1,0 +1,18 @@
+﻿
+
+@keyframes toggle {
+    0%,
+     50%,
+     100% {
+     transform: translateX(0);
+   }
+   25%,
+     75% {
+     transform: translateX(6px);
+   }
+ }
+
+
+.icon-toggle {
+    animation: toggle 0.75s ease-out;
+}
