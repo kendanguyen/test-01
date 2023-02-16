@@ -1,0 +1,662 @@
+﻿@import "../font-awesome-4.4.0/scss/font-awesome";
+
+@keyframes toggle {
+    0%,
+     50%,
+     100% {
+     transform: translateX(0);
+   }
+   25%,
+     75% {
+     transform: translateX(6px);
+   }
+ }
+
+@keyframes movedown {
+   0%,
+	50%,
+	100% {
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes moveup {
+   0%,
+	50%,
+	100% {
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes drop {
+    0% {
+       opacity:0;
+    }
+    50% {
+        opacity:0;
+        transform:translateY(-100%);
+    }
+    100% {
+        opacity:1;
+        transform:translateY(0); 
+    }
+}
+
+@keyframes floataway {
+    0% {
+       opacity:1;
+    }
+    100% {
+        opacity:0;
+        transform:translateY(-1em);
+    }
+}
+
+@keyframes sinkaway {
+    0% {
+       opacity:1;
+    }
+    100% {
+        opacity:0;
+        transform:translateY(1em);
+    }
+}
+
+@keyframes moveright {
+    16.65% {
+        transform: translateX(8px);
+    }
+    33.3% {
+        transform: translateX(-6px);
+    }
+    49.95% {
+        transform: translateX(4px);
+    }
+    66.6% {
+        transform: translateX(-2px);
+    }
+    83.25% {
+        transform: translateX(1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes movetop {
+    16.65% {
+        transform: translateY(8px);
+    }
+    33.3% {
+        transform: translateY(-6px);
+    }
+    49.95% {
+        transform: translateY(4px);
+    }
+    66.6% {
+        transform: translateY(-2px);
+    }
+    83.25% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes buzz {
+  50% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+body {
+    margin:0;
+    padding:0; 
+    font-size:14px;
+}
+.wrapper {
+    width:1024px;
+    margin:0 auto;
+    padding:30px; 
+}
+.list01 {
+    padding-bottom:20px;
+    h1 {
+        margin:0;
+        font-size:17px;
+        padding-bottom:10px;
+    }
+    > a {
+        display:inline-block;
+    }
+}
+.btn-effect {
+    background-color: #e1e1e1;
+    color: #666;
+    cursor: pointer;
+    padding: 1em;
+    margin: 0.4em;
+    text-decoration: none;
+    overflow:hidden;
+    &:hover {
+        color:#fff;
+    }
+
+    small {
+        font-size:14px;
+    }
+
+    &.fade {
+        &:hover {
+            transition: all 0.3s ease-out;
+            background: #2098d1;
+        }
+    }
+
+    &.sweep-to-right {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50% 0;
+            transition: transform 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    &.sweep-to-left {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width:0;
+            height:100%;
+            transition: width 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                width:100%;
+            }
+        }
+    }
+
+    &.sweep-to-bottom {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width:100%;
+            height:0;
+            transition: height 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                height:100%;
+            }
+        }
+    }
+
+    &.sweep-to-top {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width:100%;
+            height:0;
+            transition: height 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                height:100%;
+            }
+        }
+    }
+
+    &.shutter-in-horizontal {      
+        position: relative;
+        > span {
+            background:#e1e1e1;
+            position: absolute;
+            left: 0;
+            right:0;
+            top: 0;
+            bottom:0;
+            transform:scaleX(1);
+            transition: all 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            background: #2098d1;
+            > span {
+                transform:scaleX(0);
+            }
+        }
+    }
+
+    &.shutter-out-horizontal {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right:0;
+            top: 0;
+            bottom:0;
+            transform: scaleX(0);
+            transform-origin: 50% 50% 0;
+            transition: all 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform:scaleX(1);
+            }
+        }
+    }
+
+    &.shutter-in-vertical {      
+        position: relative;
+        > span {
+            background: #e1e1e1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleY(1);
+            transform-origin: 50% 50% 0;
+            transition: transform 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            background: #2098d1;
+            > span {
+                transform: scaleY(0);
+            }
+        }
+    }
+
+    &.shutter-out-vertical {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleY(0);
+            transform-origin: 50% 50% 0;
+            transition: transform 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    &.rectangle-in {      
+        position: relative;
+        > span {
+            background: #e1e1e1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scale(1);
+            transform-origin: 50% 50% 0;
+            transition: transform 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            background: #2098d1;
+            > span {
+                transform: scale(0);
+            }
+        }
+    }
+
+    &.rectangle-out {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scale(0);
+            transform-origin: 50% 50% 0;
+            transition: transform 0.3s ease-out;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scale(1);
+            }
+        }
+    }
+
+    &.radial-out {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            border-radius:100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scale(0);
+            transform-origin: 50% 50% 0;
+            transition: transform 0.3s ease-out;
+            overflow:hidden;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scale(2);
+            }
+        }
+    }
+
+    &.radial-in {      
+        position: relative;
+        > span {
+            background: #e1e1e1;
+            border-radius:100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scale(1);
+            transform-origin: 50% 50% 0;
+            transition: transform 0.3s ease-out;
+            overflow:hidden;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            background: #2098d1;
+            > span {
+                transform: scale(0);
+            }
+        }
+    }
+
+    &.bounce-to-right {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50% 0;
+            transition: transform 0.3s ease-out;
+            overflow:hidden;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scaleX(1);
+                transition-timing-function:cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            }
+        }
+    }
+
+    &.bounce-to-left {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: 100% 50% 0;
+            transition: transform 0.3s ease-out;
+            overflow:hidden;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scaleX(1);
+                transition-timing-function:cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            }
+        }
+    }
+
+    &.bounce-to-top {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleY(0);
+            transform-origin: 50% 100% 0;
+            transition: transform 0.3s ease-out;
+            overflow:hidden;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scaleY(1);
+                transition-timing-function:cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            }
+        }
+    }
+
+    &.bounce-to-bottom {      
+        position: relative;
+        > span {
+            background: #2098d1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scaleY(0);
+            transform-origin: 50% 0 0;
+            transition: transform 0.3s ease-out;
+            overflow:hidden;
+        }
+        > small {
+            position: relative;
+        }
+        &:hover {
+            > span {
+                transform: scaleY(1);
+                transition-timing-function:cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            }
+        }
+    }
+    
+    &.btn-icon {
+        transition: all 0.1s ease-out;     
+                
+        &:hover {
+            background: #2098d1;
+            .icon-back {
+                transition: transform 0.1s ease-out;
+                transform: translateX(-4px);
+            }
+
+            .icon-next {
+                transition: transform 0.1s ease-out;
+                transform: translateX(4px);
+            }
+
+            .icon-float {
+                transition: transform 0.1s ease-out;
+                transform: translateY(-4px);
+            }
+
+            .icon-sink {
+                transition: transform 0.1s ease-out;
+                transform: translateY(4px);
+            }
+
+            .icon-down {
+                animation: movedown 0.75s ease-out;
+            }
+
+            .icon-toggle {
+                animation: toggle 0.75s ease-out;
+            }
+
+            .icon-up {
+                animation: moveup 0.75s ease-out;
+            }
+
+            .icon-spin {
+               transition:transform 1s ease-out;
+               transform:rotate(360deg);
+            }
+
+            .icon-drop {
+                animation: drop 0.75s cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            }
+
+            .icon-grow {
+                transform:scale(1.4);
+                transition:transform 0.5s ease-out;
+            }
+
+            .icon-shrink {
+                transform:scale(0.8);
+                transition:transform 0.5s ease-out;
+            }
+
+            .icon-bounce {
+                transform:scale(1.5);
+                transition: transform 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            }
+
+            .icon-wobble-horizontal {
+                animation: moveright 0.75s ease-out;
+            }
+
+            .icon-wobble-vertical {
+                animation: movetop 0.75s ease-out;
+            }
+
+            .icon-buzz {
+                animation: buzz 0.1s ease-out infinite;
+            }
+
+        }
+
+        &.btn-float-away {
+            position:relative;
+            padding-right:25px;
+            &:before, &:after {
+                position:absolute;
+                right:10px;
+                content:"\f055";
+                font-family:FontAwesome;
+            }
+            &:hover {
+                &:after {
+                    animation:floataway 0.5s ease-out;
+                }
+            }
+        }
+
+        &.btn-sink-away {
+            position:relative;
+            padding-right:25px;
+            &:before, &:after {
+                position:absolute;
+                right:10px;
+                content:"\f056";
+                font-family:FontAwesome;
+            }
+            &:hover {
+                &:after {
+                    animation:sinkaway 0.5s ease-out;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
