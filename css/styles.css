@@ -2913,7 +2913,7 @@ body {
 }
 
 .btn-effect {
-  background-color: #e1e1e1;
+  background-color: lightgray;
   color: #666;
   cursor: pointer;
   padding: 1em;
@@ -2927,20 +2927,17 @@ body {
 .btn-effect small {
   font-size: 14px;
 }
-.btn-effect.fade {
+.btn-effect.fade:hover {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-}
-.btn-effect.fade:hover {
   background: #2098d1;
 }
 .btn-effect.sweep-to-right {
   position: relative;
 }
 .btn-effect.sweep-to-right > span {
-  background: #2098d1;
   position: absolute;
-  left: 0;
+  background: #2098d1;
   right: 0;
   top: 0;
   bottom: 0;
@@ -2952,6 +2949,7 @@ body {
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  left: 0;
 }
 .btn-effect.sweep-to-right > small {
   position: relative;
