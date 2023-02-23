@@ -153,6 +153,7 @@ body {
     cursor: pointer;
     padding: 1em;
     margin: 0.4em;
+    color: darkviolet;
     text-decoration: none;
     overflow:hidden;
     &:hover {
@@ -166,11 +167,7 @@ body {
     &.fade {
         &:hover {
             transition: all 0.3s ease-out;
-
-            background: darkorchid;
-
-    
-
+            background: blue;
         }
     }
 
@@ -178,14 +175,12 @@ body {
         position: relative;
         > span {
             position: absolute;
-
-            background: darkmagenta;
-
-
             right: 0;
             top: 0;
             bottom: 0;
             transform: scaleX(0);
+            background: lightblue;
+            color: darkviolet;
             transform-origin: 0 50% 0;
             transition: transform 0.3s ease-out;
             left: 0;
