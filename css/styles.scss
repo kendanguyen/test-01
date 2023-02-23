@@ -144,7 +144,11 @@ body {
 }
 .btn-effect {
     background-color: red;
-    color: gray;
+
+
+    color: darkgray;
+
+
     cursor: pointer;
     padding: 1em;
     margin: 0.4em;
@@ -161,7 +165,11 @@ body {
     &.fade {
         &:hover {
             transition: all 0.3s ease-out;
+
             background: darkorchid;
+
+    
+
         }
     }
 
@@ -169,7 +177,10 @@ body {
         position: relative;
         > span {
             position: absolute;
+
             background: darkmagenta;
+
+
             right: 0;
             top: 0;
             bottom: 0;
@@ -177,6 +188,7 @@ body {
             transform-origin: 0 50% 0;
             transition: transform 0.3s ease-out;
             left: 0;
+            
         }
         > small {
             position: relative;
