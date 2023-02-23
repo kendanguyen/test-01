@@ -143,19 +143,14 @@ body {
     }
 }
 .btn-effect {
-
-    background-color: darkgreen;
-
-
-    color: darkkhaki;
-
-
+    background-color: lightsalmon;
     cursor: pointer;
     padding: 1em;
     margin: 0.4em;
     color: darkviolet;
     text-decoration: none;
     overflow:hidden;
+    color: black;
     &:hover {
         color:#fff;
     }
