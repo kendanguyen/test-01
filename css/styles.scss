@@ -143,7 +143,7 @@ body {
     }
 }
 .btn-effect {
-    background-color: red;
+    background-color: lightgray;
     color: black;
 
     cursor: pointer;
@@ -162,7 +162,7 @@ body {
     &.fade {
         &:hover {
             transition: all 0.3s ease-out;
-            background: darkblue;
+            background: #2098d1;
         }
     }
 
